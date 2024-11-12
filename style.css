@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Chonburi&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&family=Special+Elite&display=swap');
+
+/* Estilos gerais para o corpo e estrutura */
+body {
+    font-family: 'Playfair Display', serif;
+    cursor: url('image/cursor.png'), auto;
+    background-color: rgb(241, 236, 236);
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    font-family: 'Chonburi', serif;
+}
+
+/* Animação scale-in-hor-center */
+.scale-in-hor-center {
+    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    transform-origin: center center;
+}
+
+@keyframes scale-in-hor-center {
+    0% {
+        transform: scaleX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+/* Animação text-focus-in */
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.text-focus-in {
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    opacity: 0;
+    filter: blur(12px);
+}
+
+/* Layout principal */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+header {
+    padding-top: 2%;
+}
+
+/* Ajuste de padding nas seções */
+section {
+    padding: 6rem 1rem;
+}
+
+.first {
+    max-width: 100%;
+    height: auto;
+}
+
+.h1 {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* Segunda seção (experiências) */
+section.second {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+.bg-white {
+    background-color: #3c474e !important;
+    color: white;
+}
+
+div.experiences {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.contatos {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h2.title, h3.title {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h2.title {
+    color: white;
+}
+
+h3.title {
+    color: #3c474e;
+    padding: 2px;
+}
+
+li {
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background-color: #3c474e;
+    padding: 1rem 0;
+    color: white;
+    text-align: center;
+}
+
+a {
+    color: #b15258;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #c0766f;
+}
+
+/* Estilo da seção de experiências */
+#experiences {
+    background-color: #b15258;
+    padding: 50px 0;
+    margin-bottom: 100px;
+}
+
+.experiences {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project {
+    background-color: rgb(241, 236, 236);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    color: #3c474e;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #3c474e;
+    margin: 15px 0;
+}
+
+.project-link {
+    display: inline-block;
+    font-size: 1rem;
+    color: #3c474e;
+    text-decoration: none;
+    border: 2px solid #3c474e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: #3c474e;
+    color: #fff;
+}
+
+.nav-link {
+    color: #3c474e;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    color: #cdbbb1;
+    text-decoration: underline;
+}
+
+/* Estilo da seta de "voltar ao topo" */
+.scroll-to-top {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+}
+
+.scroll-to-top svg {
+    fill: white;
+    width: 24px;
+    height: 24px;
+}
+
+.scroll-to-top:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* --------------------------------------------- */
+/* Media Queries para Responsividade */
+
+/* Para telas grandes (desktop) */
+@media (min-width: 1024px) {
+    .h1 {
+        flex-direction: row;
+    }
+
+    .experiences {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project {
+        width: 300px;
+    }
+
+    section.second {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10rem;
+    }
+
+    .scroll-to-top {
+        right: 30px;
+        bottom: 30px;
+    }
+}
+
+/* Para tablets (telas médias) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .h1 {
+        flex-direction: row;
+    }
+
+    .experiences {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project {
+        max-width: 45vw;
+    }
+
+    section.second {
+        padding: 6rem;
+        flex-direction: row;
+    }
+
+    .scroll-to-top {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+/* Para dispositivos móveis (telas pequenas) */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px; /* Ajuste do tamanho da fonte */
+    }
+
+    .h1 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .experiences {
+        grid-template-columns: 1fr; /* Exibe uma coluna para os projetos */
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .project {
+        width: 100%; /* Ajusta a largura dos projetos */
+    }
+
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    section.second {
+        padding: 3rem;
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+    }
+}
